@@ -31,8 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("token", data.token);
 
                 alert("✅ Login exitoso");
-                // Aquí podrías redirigir a la página de inicio del sistema
-                // window.location.href = "reservas.html";
+                window.location.href = "reservas.html";
             } catch (err) {
                 alert("❌ Error en login: " + err.message);
             }
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
 
             const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
             const correo = document.getElementById("correo").value;
             const contrasena = document.getElementById("password").value;
 
@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
                         nombre: nombre,
+                        apellido:apellido,
                         correoElectronico: correo,
                         contrasena: contrasena
                     })
